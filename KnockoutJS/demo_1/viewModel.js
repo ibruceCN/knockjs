@@ -4,7 +4,8 @@
 
 var ViewModel = {
     firstName : ko.observable("Stephen"),
-    lastName : ko.observable("Earth")
+    lastName : ko.observable("Earth"),
+    price: ko.observable('0')
 }
 
 ViewModel.otherFullName = ko.dependentObservable({
@@ -22,5 +23,19 @@ ViewModel.otherFullName = ko.dependentObservable({
 
     owner: ViewModel
 });
+
+ViewModel.fomarttedPrice = ko.dependentObservable({
+        read: function () {
+            return "$" +  this.price();
+        },
+
+        write:function(value) {
+            value = parseFloat(value.replace(/[^\.\d]/g, ""));
+            this.price(isNaN(value) ? 0 : value);
+        },
+
+        owner:ViewModel
+    }
+);
 
 ko.applyBindings(ViewModel);
