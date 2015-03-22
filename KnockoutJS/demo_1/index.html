@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Knockout js demo</title>
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <p>First Name: <strong data-bind="text:firstName"></strong> </p>
+    <p>last Name: <strong data-bind="text:lastName"></strong> </p>
+
+    <p>FirstName: <input data-bind="value:firstName"></p>
+    <p>lastName: <input data-bind="value:lastName"></p>
+
+    <h2>Hello, <input data-bind="value: otherFullName"/>!</h2>
+</div>
+
+<script src="knockout/knockout-3.3.0.js"></script>
+<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+<script src="bootstrap/bootstrap.min.js"></script>
+<script src="viewModel.js"></script>
+</body>
+</html>
