@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head lang="en">
     <meta charset="UTF-8">
     <title>Knockout js demo</title>
@@ -8,7 +8,7 @@
 <body>
 
 <div class="container">
-    <p>This is demo 1</p>
+    <h1>This is demo 1</h1>
     <p>First Name: <strong data-bind="text:firstName"></strong> </p>
     <p>last Name: <strong data-bind="text:lastName"></strong> </p>
 
@@ -17,10 +17,33 @@
 
     <h2>Hello, <input data-bind="value: otherFullName"/>!</h2>
 
-    <p> This demo 2</p>
+    <h1> This demo 2</h1>
 
     <p>Enter big price: <input data-bind="value: fomarttedPrice"/></p>
     <p>Enter big price: <strong data-bind="text: price"></strong> </p>
+
+    <h1> This demo 3 </h1>
+
+    <p>Enter a numeric value: <input data-bind="value: attemptedValue"/></p>
+    <div data-bind="visible: !lastInputWasValid()">That's not a number!</div>
+
+    <h1> This demo 4 </h1>
+    <title> JavaScript JSON 转换</title>
+
+    <dl>
+        <dt>姓名</dt>
+        <dd>
+            <input type="text" data-bind="value: name" /></dd>
+        <dt>身高</dt>
+        <dd>
+            <input type="text" data-bind="value: height" /></dd>
+        <dt>体重</dt>
+        <dd>
+            <input type="text" data-bind="value: weight" /></dd>
+    </dl>
+    <div style="margin: 10px;">
+        <input type="button" value="JS 转 ViewModel 1" data-bind="click: changeModel"/>
+    </div>
 </div>
 
 <script src="knockout/knockout-3.3.0.js"></script>
